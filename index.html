@@ -264,6 +264,26 @@
         background: #fffaf2;
         font-size: 14px;
       }
+      .reference-card > small {
+        display: block;
+        margin-top: 4px;
+        color: var(--muted);
+      }
+      .reference-group {
+        margin-top: 13px;
+        padding-top: 11px;
+        border-top: 1px dashed #d6dfd2;
+      }
+      .reference-group strong,
+      .reference-group a {
+        display: block;
+      }
+      .reference-group a {
+        margin-top: 7px;
+        color: #377159;
+        font-size: 14px;
+        font-weight: 700;
+      }
       .nav-links {
         margin-top: 14px;
         padding-top: 13px;
@@ -459,6 +479,61 @@
         ["呼和浩特", "https://www.weather.com.cn/weather15d/101080101.shtml"],
         ["呼和浩特", "https://www.weather.com.cn/weather15d/101080101.shtml"],
       ];
+      const XHS_REFERENCES = [
+        [
+          [
+            "辉腾锡勒草原参考攻略",
+            [
+              ["0 门票玩转辉腾锡勒", "https://xhslink.cn/o/4NQZYlUcUFw"],
+              ["自驾辉腾锡勒 4 个景点攻略", "https://xhslink.cn/o/8ci2bmpLam3"],
+              ["辉腾锡勒草原／黄花沟自驾推荐玩法", "https://xhslink.cn/o/9UwtIdkVLNS"],
+            ],
+          ],
+        ],
+        [
+          [
+            "辉腾锡勒草原参考攻略",
+            [
+              ["0 门票玩转辉腾锡勒", "https://xhslink.cn/o/4NQZYlUcUFw"],
+              ["自驾辉腾锡勒 4 个景点攻略", "https://xhslink.cn/o/8ci2bmpLam3"],
+              ["辉腾锡勒草原／黄花沟自驾推荐玩法", "https://xhslink.cn/o/9UwtIdkVLNS"],
+            ],
+          ],
+          [
+            "呼和浩特市区参考攻略",
+            [
+              ["呼市一日游逛吃住攻略", "https://xhslink.cn/o/5OblGYuUIzA"],
+              ["呼和浩特 Citywalk 返程版", "https://xhslink.cn/o/6r3PY7dXt5O"],
+              ["历史与烟火一日攻略", "https://xhslink.cn/o/8zBx4NfhPvy"],
+            ],
+          ],
+        ],
+        [
+          [
+            "响沙湾参考攻略",
+            [
+              ["响沙湾｜沙漠迪士尼一日游攻略", "https://xhslink.cn/o/KzzpZLRh9R"],
+              ["这回弄明白了，响沙湾游玩怎么玩？", "https://xhslink.cn/o/6pU6Xl6OTNt"],
+            ],
+          ],
+        ],
+        [
+          [
+            "呼和浩特市区参考攻略 · 晚餐备选",
+            [
+              ["呼市一日游逛吃住攻略", "https://xhslink.cn/o/5OblGYuUIzA"],
+              ["呼和浩特 Citywalk 返程版", "https://xhslink.cn/o/6r3PY7dXt5O"],
+              ["历史与烟火一日攻略", "https://xhslink.cn/o/8zBx4NfhPvy"],
+            ],
+          ],
+        ],
+        [],
+      ];
+      function xiaohongshuRefs(day) {
+        const groups = XHS_REFERENCES[day];
+        if (!groups.length) return "";
+        return `<div class="card reference-card"><b>小红书参考攻略</b><small>点击在小红书中打开详情。</small>${groups.map(([title, links]) => `<div class="reference-group"><strong>${title}</strong>${links.map(([label, href]) => `<a href="${href}" target="_blank" rel="noopener noreferrer">${label} ↗</a>`).join("")}</div>`).join("")}</div>`;
+      }
       function amapSearch(keyword, city) {
         return `https://uri.amap.com/search?keyword=${encodeURIComponent(keyword)}&city=${encodeURIComponent(city)}&view=map&callnative=1&src=inner_mongolia_trip`;
       }
@@ -626,7 +701,7 @@
           })
           .join(
             "",
-          )}</div><div class="meal"><b>餐位预留</b> · ${x[6]}${dayIndex === 2 ? '<br><a href="https://xhslink.cn/o/KzzpZLRh9R" target="_blank" rel="noopener noreferrer">小红书：仙沙岛一日游</a><br><a href="https://xhslink.cn/o/6pU6Xl6OTNt" target="_blank" rel="noopener noreferrer">小红书：响沙湾玩法参考</a>' : ""}</div><div class="nav-links"><b>当天地点导航</b><small>点击打开高德地点；带「备选」的地点不代表一定前往。</small>${x[9].map(([name, href]) => `<a class="btn" href="${href}" target="_blank" rel="noopener noreferrer">高德 · ${name}</a>`).join("")}</div></div>`;
+          )}</div><div class="meal"><b>餐位预留</b> · ${x[6]}</div></div>${xiaohongshuRefs(dayIndex)}<div class="card"><div class="nav-links"><b>当天地点导航</b><small>点击打开高德地点；带「备选」的地点不代表一定前往。</small>${x[9].map(([name, href]) => `<a class="btn" href="${href}" target="_blank" rel="noopener noreferrer">高德 · ${name}</a>`).join("")}</div></div>`;
       }
       function render() {
         tabs.innerHTML = sections
