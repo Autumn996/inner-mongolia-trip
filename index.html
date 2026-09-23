@@ -258,6 +258,19 @@
         background: #fffaf2;
         font-size: 14px;
       }
+      .nav-links {
+        margin-top: 14px;
+        padding-top: 13px;
+        border-top: 1px solid #e8e1d4;
+      }
+      .nav-links b,
+      .nav-links small {
+        display: block;
+      }
+      .nav-links small {
+        margin-top: 4px;
+        color: var(--muted);
+      }
       .btn {
         display: inline-block;
         margin: 11px 7px 0 0;
@@ -329,6 +342,11 @@
           "塞北驿站民宿晚餐",
           "https://surl.amap.com/kaJCo6tfer",
           ["白塔机场", "塞北驿站", "牛粑粑欢乐草原"],
+          [
+            ["白塔机场", amapSearch("呼和浩特白塔国际机场", "呼和浩特")],
+            ["塞北驿站（辉腾锡勒草原明珠店）", "https://surl.amap.com/kaJCo6tfer"],
+            ["牛粑粑欢乐草原", amapSearch("牛粑粑欢乐草原", "乌兰察布")],
+          ],
         ],
         [
           "04",
@@ -348,6 +366,17 @@
           "黄花沟简餐；通顺大巷/塞上老街晚餐",
           "https://uri.amap.com/marker?position=112.537638,41.130892&name=%E9%BB%84%E8%8A%B1%E6%B2%9F&coordinate=wgs84&callnative=1&src=inner_mongolia_trip",
           ["塞北驿站", "飞驰马术场", "黄花沟", "大召寺", "塞上老街"],
+          [
+            ["塞北驿站（辉腾锡勒草原明珠店）", "https://surl.amap.com/kaJCo6tfer"],
+            ["黄花沟飞驰马术场", amapSearch("黄花沟飞驰马术场", "乌兰察布")],
+            ["黄花沟", "https://uri.amap.com/marker?position=112.537638,41.130892&name=%E9%BB%84%E8%8A%B1%E6%B2%9F&coordinate=wgs84&callnative=1&src=inner_mongolia_trip"],
+            ["二阳卜观景台（备选）", amapSearch("二阳卜观景台", "乌兰察布")],
+            ["99 泉（备选）", amapSearch("99泉 辉腾锡勒草原", "乌兰察布")],
+            ["全季酒店（呼和浩特赛罕万达广场店）", "https://surl.amap.com/mSZ2zc1lfia"],
+            ["大召寺", amapSearch("大召寺", "呼和浩特")],
+            ["塞上老街", amapSearch("塞上老街", "呼和浩特")],
+            ["通顺大巷", amapSearch("通顺大巷", "呼和浩特")],
+          ],
         ],
         [
           "05",
@@ -366,6 +395,12 @@
           "响沙湾仙沙岛内午餐；酒店附近晚餐",
           "https://uri.amap.com/marker?position=109.59,40.25&name=%E5%93%8D%E6%B2%99%E6%B9%BE&coordinate=wgs84&callnative=1&src=inner_mongolia_trip",
           ["全季酒店", "响沙湾（仙沙岛）"],
+          [
+            ["全季酒店（呼和浩特赛罕万达广场店）", "https://surl.amap.com/mSZ2zc1lfia"],
+            ["响沙湾景区", "https://uri.amap.com/marker?position=109.59,40.25&name=%E5%93%8D%E6%B2%99%E6%B9%BE&coordinate=wgs84&callnative=1&src=inner_mongolia_trip"],
+            ["仙沙岛", amapSearch("仙沙岛 响沙湾", "鄂尔多斯")],
+            ["悦沙岛（本次不安排）", amapSearch("悦沙岛 响沙湾", "鄂尔多斯")],
+          ],
         ],
         [
           "06",
@@ -381,6 +416,12 @@
           "红石崖附近午餐；塞上老街晚餐",
           "https://uri.amap.com/search?keyword=%E7%BA%A2%E7%9F%B3%E5%B4%96%E5%9B%BD%E5%AE%B6%E7%94%9F%E6%80%81%E5%85%AC%E5%9B%AD&city=%E5%91%BC%E5%92%8C%E6%B5%A9%E7%89%B9&view=map&callnative=1&src=inner_mongolia_trip",
           ["全季酒店", "红石崖", "敕勒川"],
+          [
+            ["全季酒店（呼和浩特赛罕万达广场店）", "https://surl.amap.com/mSZ2zc1lfia"],
+            ["红石崖国家生态公园", amapSearch("红石崖国家生态公园", "呼和浩特")],
+            ["敕勒川草原文化旅游区", amapSearch("敕勒川草原文化旅游区", "呼和浩特")],
+            ["塞上老街（晚餐备选）", amapSearch("塞上老街", "呼和浩特")],
+          ],
         ],
         [
           "07",
@@ -398,8 +439,16 @@
           "博物院附近/酒店附近简餐",
           "https://uri.amap.com/search?keyword=%E5%86%85%E8%92%99%E5%8F%A4%E5%8D%9A%E7%89%A9%E9%99%A2&city=%E5%91%BC%E5%92%8C%E6%B5%A9%E7%89%B9&view=map&callnative=1&src=inner_mongolia_trip",
           ["全季酒店", "内蒙古博物院", "白塔机场"],
+          [
+            ["全季酒店（呼和浩特赛罕万达广场店）", "https://surl.amap.com/mSZ2zc1lfia"],
+            ["内蒙古博物院", amapSearch("内蒙古博物院", "呼和浩特")],
+            ["白塔机场", amapSearch("呼和浩特白塔国际机场", "呼和浩特")],
+          ],
         ],
       ];
+      function amapSearch(keyword, city) {
+        return `https://uri.amap.com/search?keyword=${encodeURIComponent(keyword)}&city=${encodeURIComponent(city)}&view=map&callnative=1&src=inner_mongolia_trip`;
+      }
       function map(a) {
         let p = a[8].map((x, i) => [
             70 + i * (460 / (a[8].length - 1 || 1)),
@@ -564,7 +613,7 @@
           })
           .join(
             "",
-          )}</div><div class="meal"><b>餐位预留</b> · ${x[6]}${dayIndex === 2 ? '<br><a href="https://xhslink.cn/o/KzzpZLRh9R" target="_blank" rel="noopener noreferrer">小红书：仙沙岛一日游</a><br><a href="https://xhslink.cn/o/6pU6Xl6OTNt" target="_blank" rel="noopener noreferrer">小红书：响沙湾玩法参考</a>' : ""}</div>${dayIndex === 2 ? `<a class="btn" href="https://surl.amap.com/mSZ2zc1lfia" target="_blank" rel="noopener noreferrer">高德 · 全季酒店</a><a class="btn" href="${x[7]}" target="_blank" rel="noopener noreferrer">高德 · 响沙湾</a>` : `<a class="btn" href="${x[7]}" target="_blank" rel="noopener noreferrer">打开高德导航</a>`}</div>`;
+          )}</div><div class="meal"><b>餐位预留</b> · ${x[6]}${dayIndex === 2 ? '<br><a href="https://xhslink.cn/o/KzzpZLRh9R" target="_blank" rel="noopener noreferrer">小红书：仙沙岛一日游</a><br><a href="https://xhslink.cn/o/6pU6Xl6OTNt" target="_blank" rel="noopener noreferrer">小红书：响沙湾玩法参考</a>' : ""}</div><div class="nav-links"><b>当天地点导航</b><small>点击打开高德地点；带「备选」的地点不代表一定前往。</small>${x[9].map(([name, href]) => `<a class="btn" href="${href}" target="_blank" rel="noopener noreferrer">高德 · ${name}</a>`).join("")}</div></div>`;
       }
       function render() {
         tabs.innerHTML = sections
