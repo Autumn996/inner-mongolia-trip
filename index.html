@@ -219,6 +219,12 @@
       .weather b {
         display: block;
       }
+      .weather-link {
+        background: #fffaf0;
+        border: 1px solid #dec58f;
+        color: #725d32;
+        box-shadow: 0 2px 0 rgba(157, 120, 57, 0.1);
+      }
       .wear {
         padding: 9px;
         margin-top: 8px;
@@ -613,7 +619,7 @@
       }
       function detail() {
         const x = D[dayIndex];
-        return `<div class="ey">每日行程 · 5 天</div><h2 class="title">每天的具体安排</h2><nav class="subtabs" id="day-tabs" aria-label="选择日期">${D.map((d, i) => `<button type="button" class="${i === dayIndex ? "on" : ""}" data-day="${i}" aria-pressed="${i === dayIndex}">10/${d[0]}</button>`).join("")}</nav><div class="ey">DAY ${dayIndex + 1} · 10/${x[0]}</div><h2 class="title">${x[1]}</h2>${map(x)}<div class="card weather"><b>☀︎ ${x[3]}</b><small>秋季参考温度，非实时预报</small><a class="btn" href="${WEATHER_LINKS[dayIndex][1]}" target="_blank" rel="noopener noreferrer">中国天气网 · ${WEATHER_LINKS[dayIndex][0]}详细天气 ↗</a><div class="wear"><b>穿衣建议：</b>${x[4]}</div></div><div class="card"><div class="line">${x[5]
+        return `<div class="ey">每日行程 · 5 天</div><h2 class="title">每天的具体安排</h2><nav class="subtabs" id="day-tabs" aria-label="选择日期">${D.map((d, i) => `<button type="button" class="${i === dayIndex ? "on" : ""}" data-day="${i}" aria-pressed="${i === dayIndex}">10/${d[0]}</button>`).join("")}</nav><div class="ey">DAY ${dayIndex + 1} · 10/${x[0]}</div><h2 class="title">${x[1]}</h2>${map(x)}<div class="card weather"><b>☀︎ ${x[3]}</b><small>秋季参考温度，非实时预报</small><a class="btn weather-link" href="${WEATHER_LINKS[dayIndex][1]}" target="_blank" rel="noopener noreferrer">中国天气网 · ${WEATHER_LINKS[dayIndex][0]}详细天气 ↗</a><div class="wear"><b>穿衣建议：</b>${x[4]}</div></div><div class="card"><div class="line">${x[5]
           .map((z) => {
             const q = z.split("|");
             return `<p><span class="time">${q[0]}</span>${q[1]}</p>`;
