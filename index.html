@@ -446,6 +446,13 @@
           ],
         ],
       ];
+      const WEATHER_LINKS = [
+        ["察右中旗", "https://www.weather.com.cn/weather15d/101080409.shtml"],
+        ["察右中旗", "https://www.weather.com.cn/weather15d/101080409.shtml"],
+        ["达拉特旗", "https://www.weather.com.cn/weather15d/101080703.shtml"],
+        ["呼和浩特", "https://www.weather.com.cn/weather15d/101080101.shtml"],
+        ["呼和浩特", "https://www.weather.com.cn/weather15d/101080101.shtml"],
+      ];
       function amapSearch(keyword, city) {
         return `https://uri.amap.com/search?keyword=${encodeURIComponent(keyword)}&city=${encodeURIComponent(city)}&view=map&callnative=1&src=inner_mongolia_trip`;
       }
@@ -606,7 +613,7 @@
       }
       function detail() {
         const x = D[dayIndex];
-        return `<div class="ey">每日行程 · 5 天</div><h2 class="title">每天的具体安排</h2><nav class="subtabs" id="day-tabs" aria-label="选择日期">${D.map((d, i) => `<button type="button" class="${i === dayIndex ? "on" : ""}" data-day="${i}" aria-pressed="${i === dayIndex}">10/${d[0]}</button>`).join("")}</nav><div class="ey">DAY ${dayIndex + 1} · 10/${x[0]}</div><h2 class="title">${x[1]}</h2>${map(x)}<div class="card weather"><b>☀︎ ${x[3]}</b><small>秋季参考温度，非实时预报</small><div class="wear"><b>穿衣建议：</b>${x[4]}</div></div><div class="card"><div class="line">${x[5]
+        return `<div class="ey">每日行程 · 5 天</div><h2 class="title">每天的具体安排</h2><nav class="subtabs" id="day-tabs" aria-label="选择日期">${D.map((d, i) => `<button type="button" class="${i === dayIndex ? "on" : ""}" data-day="${i}" aria-pressed="${i === dayIndex}">10/${d[0]}</button>`).join("")}</nav><div class="ey">DAY ${dayIndex + 1} · 10/${x[0]}</div><h2 class="title">${x[1]}</h2>${map(x)}<div class="card weather"><b>☀︎ ${x[3]}</b><small>秋季参考温度，非实时预报</small><a class="btn" href="${WEATHER_LINKS[dayIndex][1]}" target="_blank" rel="noopener noreferrer">中国天气网 · ${WEATHER_LINKS[dayIndex][0]}详细天气 ↗</a><div class="wear"><b>穿衣建议：</b>${x[4]}</div></div><div class="card"><div class="line">${x[5]
           .map((z) => {
             const q = z.split("|");
             return `<p><span class="time">${q[0]}</span>${q[1]}</p>`;
