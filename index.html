@@ -172,6 +172,30 @@
       .feature p {
         margin: 4px 0;
       }
+      .food-category h3 {
+        margin: 0 0 7px;
+        color: var(--i);
+        font-size: 18px;
+      }
+      .food-category > p {
+        margin: 0;
+      }
+      .food-place {
+        padding: 11px 0;
+        border-top: 1px solid #e8e9de;
+      }
+      .food-category h3 + .food-place,
+      .food-category > p + .food-place {
+        margin-top: 10px;
+      }
+      .food-place b {
+        display: block;
+      }
+      .food-place p {
+        margin: 4px 0 0;
+        color: #52665c;
+        font-size: 14px;
+      }
       .map {
         padding: 0;
         overflow: hidden;
@@ -707,7 +731,31 @@
       }
 
       function food() {
-        return `<div class="ey">一路吃一点</div><h2 class="title">美食与伴手礼</h2><div class="card"><b>想尝的当地味道</b><div class="feature-grid"><div class="feature"><b>烧麦</b><p>适合在呼市吃早餐或早午餐；三人先按食量点，不必为排队太久绕路。</p></div><div class="feature"><b>蒙餐与羊肉</b><p>返城后的晚餐可选手把肉、涮羊肉等，结合附近餐馆和同行人口味决定。</p></div><div class="feature"><b>奶茶与乳制品</b><p>路上尝一点奶茶、奶皮子或奶酪，留意甜度和乳制品保存条件。</p></div><div class="feature"><b>羊杂和面食</b><p>想吃一顿更有当地风味的早餐时可试；不适合口味就换轻一点的选择。</p></div></div></div><div class="card"><b>伴手礼</b><p>乳制品和密封的牛羊肉制品可作为选购方向。返程前核对保质期、储存要求和携带限制，不专门为购物改变路线。</p></div><p class="note">这里是风味与选购汇总，尚未核定具体分店、菜单或国庆报价。</p>`;
+        return `
+          <div class="ey">一路吃一点</div><h2 class="title">美食与伴手礼</h2>
+          <div class="card food-category">
+            <h3>蒙餐正餐</h3>
+            <div class="food-place"><b>塞伊德</b><p>笔记推荐家庭聚餐；可留意羊背、黄柿子牛肉和烤羊尾，适合安排一顿比较完整的蒙餐。</p></div>
+            <div class="food-place"><b>斡鲁朵蒙古料理</b><p>创意蒙餐，笔记提到晚间演出和蒙服拍照；适合想兼顾用餐氛围的晚餐。</p></div>
+            <div class="food-place"><b>德乐海</b><p>笔记特别喜欢牛肉馅饼，也提到有表演；对羊杂锅的评价较差，先作为馅饼备选。</p></div>
+          </div>
+          <div class="card food-category">
+            <h3>涮羊肉</h3>
+            <div class="food-place"><b>额尔敦</b><p>笔记推荐的涮羊肉店，适合想安排羊肉火锅的一晚。</p></div>
+            <div class="food-place"><b>优羊铜锅涮</b><p>笔记提到的另一家铜锅涮，主打羊肉和更实惠的选择；具体分店待定。</p></div>
+          </div>
+          <div class="card food-category">
+            <h3>蒙式早餐与奶食</h3>
+            <div class="food-place"><b>格日乐阿妈</b><p>笔记推荐锅茶、奶酪饼，也提到骆驼饼、羊肉沙葱饼和奶皮小食；适合早餐或早午餐。</p></div>
+          </div>
+          <div class="card food-category">
+            <h3>羊杂</h3>
+            <div class="food-place"><b>贝尔羊杂</b><p>笔记推荐的羊杂碎早餐店；出发前再确认门店、营业时间和排队情况。</p></div>
+          </div>
+          <div class="card food-category"><h3>烧麦</h3><p>呼市早餐或早午餐备选；店铺还没定，三人先按食量点，不必为排队太久绕路。</p></div>
+          <div class="card food-category"><h3>伴手礼</h3><p>乳制品和密封的牛羊肉制品可作为选购方向。返程前核对保质期、储存要求和携带限制，不专门为购物改变路线。</p></div>
+          <div class="card"><b>小红书参考</b><p>以上七家店和菜品来自同一篇当地人分享，口味评价仅作选店参考。</p><a href="https://xhslink.cn/o/1pX8Q0qcSOE" target="_blank" rel="noopener noreferrer">本地人最爱的呼和浩特蒙餐馆 ↗</a></div>
+          <p class="note">具体分店、菜单、营业时间及国庆价格尚未核定；确定想去的店后可继续补高德地点。</p>`;
       }
       function detail() {
         const x = D[dayIndex];
