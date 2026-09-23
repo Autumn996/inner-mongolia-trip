@@ -1,6 +1,101 @@
-<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>内蒙古 · 国庆旅行</title><style>:root{--i:#183d34;--g:#568263;--o:#d9823c;--b:#f5f1e8}*{box-sizing:border-box}body{margin:0;background:var(--b);color:var(--i);font:16px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}main{max-width:700px;margin:auto;padding:0 16px 48px}header{margin:0 -16px;padding:42px 22px 32px;color:#fff;background:linear-gradient(#132d20bb,#132d2050),url(hero-v1.png) center/cover}h1{font-size:32px;line-height:1.2;margin:0 0 5px}.tabs{display:flex;gap:8px;overflow:auto;position:sticky;top:0;z-index:2;padding:13px 0;background:var(--b)}button{flex:none;border:0;border-radius:13px;padding:9px 13px;background:#e4ece2;color:#315b45;font:700 13px inherit}button.on{background:var(--i);color:#fff}.card{padding:16px;margin:14px 0;border:1px solid #e9e2d6;border-radius:19px;background:#fffdfa;box-shadow:0 4px 13px #42341b0b}.ey{font-size:13px;font-weight:800;letter-spacing:.08em;color:#bd6b2f}.title{font-size:24px;line-height:1.25;margin:3px 0 9px}.tag{display:inline-block;margin:0 4px 8px 0;padding:3px 9px;background:#e8f0e5;color:#477458;border-radius:99px;font-size:12px}.summary{display:grid;grid-template-columns:1fr 1fr;gap:10px}.tile{padding:12px;border-radius:13px;background:#eff4eb}.tile b{display:block}.day{display:grid;grid-template-columns:44px 1fr;gap:11px;padding:11px 0;border-bottom:1px solid #eee7dc}.day:last-child{border:0}.date{font-weight:800;color:var(--o)}.check{display:grid;grid-template-columns:1fr 1fr;gap:9px}.check div{padding:10px;border-radius:12px;background:#f3f6ef;font-size:14px}.map{padding:0;overflow:hidden;background:#e4eddf}.map h3{padding:11px 14px;margin:0;font-size:14px}.map svg{display:block;width:100%;height:auto}.road{fill:none;stroke:#3d7b61;stroke-width:5;stroke-linecap:round;stroke-dasharray:8 7}.pin{fill:#fff;stroke:#dc8742;stroke-width:3}.lab{font:700 13px sans-serif;fill:#183d34}.num{font:700 11px sans-serif;fill:#dc8742}.legend{padding:8px 14px 12px;font-size:12px;color:#64746b}.weather{background:#fff4e5;border-color:#efd5ad}.weather b{display:block}.wear{padding:9px;margin-top:8px;border-radius:10px;background:#f2f6ee;font-size:14px}.line{border-left:2px solid #d2dfcf;padding-left:17px;margin:7px 0}.line p{position:relative;margin:0 0 12px}.line p:before{content:"";position:absolute;left:-23px;top:8px;width:9px;height:9px;border-radius:50%;background:#6f9d72}.time{display:block;color:#377159;font-weight:800;font-size:14px}.meal{padding:10px;border:1px dashed #d6bd94;border-radius:11px;background:#fffaf2;font-size:14px}.btn{display:inline-block;margin:11px 7px 0 0;padding:8px 11px;background:var(--i);color:#fff;text-decoration:none;border-radius:10px;font-size:13px;font-weight:700}.note{font-size:12px;color:#68776e;margin:12px 2px}@media(max-width:420px){.summary,.check{grid-template-columns:1fr}}</style><main><header><h1>草原、沙漠与青城</h1><div>上海 → 呼和浩特 · 10.03 — 10.07</div></header><nav class="tabs" id="tabs"></nav><section id="app"></section><p class="note">天气当前为秋季参考区间，10 月 1 日后更新为实时预报。路线图用于理解当日顺序，实际导航以高德为准。</p></main><script>const D=[
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#183d34">
+  <title>内蒙古 · 国庆旅行</title>
+  <style>
+    :root{--i:#183d34;--g:#568263;--o:#d9823c;--b:#f5f1e8}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--b);color:var(--i);font:16px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+    main{max-width:700px;margin:auto;padding:0 16px 48px}
+    header{margin:0 -16px;padding:42px 22px 32px;color:#fff;background:linear-gradient(#132d20bb,#132d2050),url(hero-v1.png) center/cover}
+    h1{font-size:32px;line-height:1.2;margin:0 0 5px}
+    .tabs,.subtabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+    .tabs::-webkit-scrollbar,.subtabs::-webkit-scrollbar{display:none}
+    .tabs{position:sticky;top:0;z-index:2;padding:13px 0;background:var(--b);border-bottom:1px solid #e8e1d6}
+    .subtabs{padding:4px 0 12px;margin-bottom:8px}
+    button{flex:none;border:0;border-radius:13px;padding:9px 13px;background:#e4ece2;color:#315b45;font:700 13px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;cursor:pointer}
+    button.on{background:var(--i);color:#fff}
+    .card{padding:16px;margin:14px 0;border:1px solid #e9e2d6;border-radius:19px;background:#fffdfa;box-shadow:0 4px 13px #42341b0b}
+    .ey{font-size:13px;font-weight:800;letter-spacing:.08em;color:#bd6b2f}
+    .title{font-size:24px;line-height:1.25;margin:3px 0 9px}
+    .summary,.check,.feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .tile{padding:12px;border-radius:13px;background:#eff4eb}
+    .tile b{display:block}
+    .day{display:grid;grid-template-columns:44px 1fr;gap:11px;padding:11px 0;border-bottom:1px solid #eee7dc}
+    .day:last-child{border:0}
+    .date{font-weight:800;color:var(--o)}
+    .check div,.feature{padding:10px;border-radius:12px;background:#f3f6ef;font-size:14px}
+    .feature b{display:block;font-size:16px}
+    .feature p{margin:4px 0}
+    .map{padding:0;overflow:hidden;background:#e4eddf}
+    .map h3{padding:11px 14px;margin:0;font-size:14px}
+    .map svg{display:block;width:100%;height:auto}
+    .road{fill:none;stroke:#3d7b61;stroke-width:5;stroke-linecap:round;stroke-dasharray:8 7}
+    .pin{fill:#fff;stroke:#dc8742;stroke-width:3}
+    .lab{font:700 13px sans-serif;fill:#183d34}
+    .num{font:700 11px sans-serif;fill:#dc8742}
+    .legend{padding:8px 14px 12px;font-size:12px;color:#64746b}
+    .weather{background:#fff4e5;border-color:#efd5ad}
+    .weather b{display:block}
+    .wear{padding:9px;margin-top:8px;border-radius:10px;background:#f2f6ee;font-size:14px}
+    .line{border-left:2px solid #d2dfcf;padding-left:17px;margin:7px 0}
+    .line p{position:relative;margin:0 0 12px}
+    .line p:before{content:"";position:absolute;left:-23px;top:8px;width:9px;height:9px;border-radius:50%;background:#6f9d72}
+    .time{display:block;color:#377159;font-weight:800;font-size:14px}
+    .meal{padding:10px;border:1px dashed #d6bd94;border-radius:11px;background:#fffaf2;font-size:14px}
+    .btn{display:inline-block;margin:11px 7px 0 0;padding:8px 11px;background:var(--i);color:#fff;text-decoration:none;border-radius:10px;font-size:13px;font-weight:700}
+    .note{font-size:12px;color:#68776e;margin:12px 2px}
+    .tip{border-left:3px solid var(--g);padding-left:12px;margin:14px 0}
+    .tick{display:flex;align-items:flex-start;gap:9px;padding:8px 0}
+    .tick input{margin-top:6px;accent-color:var(--i)}
+    .ledger-form{display:grid;grid-template-columns:1fr 100px;gap:8px}
+    .ledger-form input{min-width:0;padding:9px 10px;border:1px solid #ccd9ca;border-radius:10px;background:#fff;font:inherit}
+    .ledger-form input[name=who]{grid-column:1/2}
+    .ledger-form button{grid-column:2/3;grid-row:2/3}
+    .expense{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid #eee7dc;font-size:14px}
+    .expense:last-child{border:0}
+    .expense small{display:block;color:#68776e}
+    .expense button{padding:5px 8px;background:#f6e8df;color:#9a4d2d}
+    .total{font-weight:800;margin-top:14px}
+    @media(max-width:420px){.summary,.check,.feature-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<main>
+  <header><h1>草原、沙漠与青城</h1><div>上海 → 呼和浩特 · 10.03 — 10.07</div></header>
+  <nav class="tabs" id="tabs" aria-label="主栏目"></nav>
+  <section id="app" aria-live="polite"></section>
+  <p class="note">天气为秋季参考，不是实时预报；景区开放、票价与项目以出发前官方信息为准。路线图仅示意顺序，实际导航以高德为准。</p>
+</main>
+<script>
+const D=[
 ['03','落地，奔向草原的夜','白塔机场 → 塞北驿站','辉腾锡勒 · -2–10°C','保暖内层 + 抓绒/薄羽绒 + 防风冲锋衣；日出和篝火带帽子手套。',['10:55–12:00|落地、取行李、与司机会合。','12:00–14:30|直达辉腾锡勒。','16:00–18:30|营地风车、日落慢逛。','19:00–21:30|晚餐 + 篝火（需确认）。'],'塞北驿站民宿晚餐','https://surl.amap.com/kaJCo6tfer',['白塔机场','塞北驿站']],
 ['04','草原日出，把风景走到尽兴','塞北驿站 → 黄花沟 → 全季酒店','辉腾锡勒 → 呼市 · -1–12°C','早晨按 0°C 准备；白天长袖 + 防风外套。',['06:30–07:30|草原日出。','09:30–13:30|黄花沟峡谷、风车与草原。','14:30–17:30|返呼市，入住全季。'],'黄花沟简餐；赛罕万达附近蒙餐/烧麦','https://uri.amap.com/marker?position=112.537638,41.130892&name=%E9%BB%84%E8%8A%B1%E6%B2%9F&coordinate=wgs84&callnative=1&src=inner_mongolia_trip',['塞北驿站','黄花沟','全季酒店']],
 ['05','把一整天留给沙漠','全季酒店 ↔ 响沙湾（仙沙岛）','响沙湾 · 4–18°C','长袖打底 + 防风外套；墨镜、口罩/头巾和防沙鞋套。',['06:30–07:00|酒店出发。','10:30–12:30|仙沙岛核心游玩；参考门票 ¥180，以预订页为准。','12:30–13:30|景区午餐、补水。','13:30–16:00|继续自由体验，按体力选择项目。','16:00–20:00|返回呼市。'],'响沙湾景区午餐；酒店附近晚餐','https://uri.amap.com/marker?position=109.59,40.25&name=%E5%93%8D%E6%B2%99%E6%B9%BE&coordinate=wgs84&callnative=1&src=inner_mongolia_trip',['全季酒店','响沙湾']],
 ['06','红色山崖，接着去敕勒川','全季酒店 → 红石崖 → 敕勒川草原','呼市周边 · 3–16°C','长袖 + 冲锋衣；红石崖风口加抓绒或薄羽绒。',['08:30–13:30|红石崖丹霞、草原观景与轻徒步。','14:30–17:30|敕勒川草原，日落前结束。','18:30 起|回市区晚饭。'],'红石崖附近午餐；塞上老街晚餐','https://uri.amap.com/search?keyword=%E7%BA%A2%E7%9F%B3%E5%B4%96%E5%9B%BD%E5%AE%B6%E7%94%9F%E6%80%81%E5%85%AC%E5%9B%AD&city=%E5%91%BC%E5%92%8C%E6%B5%A9%E7%89%B9&view=map&callnative=1&src=inner_mongolia_trip',['全季酒店','红石崖','敕勒川']],
-['07','把从容留给返程','全季酒店 → 白塔机场','呼和浩特 · 4–16°C','市区秋装；机场路上备一件随手穿脱的外套。',['上午|早餐、整理行李，只在酒店附近活动。','12:30|退房、取行李。','14:20 前|抵达机场值机安检，16:20 起飞。'],'酒店附近早餐/简餐','https://uri.amap.com/search?keyword=%E5%91%BC%E5%92%8C%E6%B5%A9%E7%89%B9%E7%99%BD%E5%A1%94%E5%9B%BD%E9%99%85%E6%9C%BA%E5%9C%BA',['全季酒店','白塔机场']]];let n=-1;function map(a){let p=a[8].map((x,i)=>[70+i*(460/(a[8].length-1||1)),150+(i%2?40:-38)]),d=p.map((x,i)=>(i?'L':'M')+x).join(' ');return`<div class="card map"><h3>${a[2]}</h3><svg viewBox="0 0 600 300"><rect width="600" height="300" fill="#e4eddf"/><path d="M0 65Q140 10 280 75T600 48M0 230Q140 175 280 235T600 205" fill="none" stroke="#bdd4b8" stroke-width="20" opacity=".7"/><path d="${d}" class="road"/>${p.map((x,i)=>`<circle cx="${x[0]}" cy="${x[1]}" r="12" class="pin"/><text x="${x[0]-4}" y="${x[1]+4}" class="num">${i+1}</text><text x="${x[0]-30}" y="${x[1]-19}" class="lab">${a[8][i]}</text>`).join('')}</svg><div class="legend">1 → ${a[8].length} 为当天行程顺序</div></div>`}function overview(){return`<div class="ey">全程总览 · 5 天 4 晚</div><h2 class="title">一条从草原到沙漠的秋日路线</h2><div class="card summary"><div class="tile"><b>10/03 · 草原</b>塞北驿站蒙古包</div><div class="tile"><b>10/04–06 · 呼市</b>全季赛罕万达店</div><div class="tile"><b>核心风景</b>辉腾锡勒、黄花沟、响沙湾</div><div class="tile"><b>返程</b>10/07 16:20 白塔机场</div></div><div class="card">${D.map(x=>`<div class="day"><div class="date">10/${x[0]}</div><div><b>${x[1]}</b><br><small>${x[2]}</small></div></div>`).join('')}</div><div class="card"><b>出行清单</b><div class="check"><div><b>保暖</b><br>冲锋衣、抓绒、薄羽绒、帽子手套</div><div><b>防晒防沙</b><br>墨镜、防晒、润唇膏、头巾/口罩</div><div><b>鞋服</b><br>防水运动鞋、厚袜、长袖打底</div><div><b>实用物品</b><br>充电宝、保温杯、湿巾、密封袋</div><div><b>证件与预约</b><br>身份证、酒店订单、景区票、保险</div><div><b>药品</b><br>肠胃药、创可贴、个人常用药</div></div></div>`}function render(){tabs.innerHTML=`<button class="${n<0?'on':''}" onclick="n=-1;render()">总览</button>`+D.map((x,i)=>`<button class="${i==n?'on':''}" onclick="n=${i};render()">${x[0]} 日</button>`).join('');if(n<0){app.innerHTML=overview();return}let x=D[n];app.innerHTML=`<div class="ey">DAY ${n+1} · 10/${x[0]}</div><h2 class="title">${x[1]}</h2>${map(x)}<div class="card weather"><b>☀︎ ${x[3]}</b><small>秋季参考温度，非实时预报</small><div class="wear"><b>穿衣建议：</b>${x[4]}</div></div><div class="card"><div class="line">${x[5].map(z=>{let q=z.split('|');return`<p><span class="time">${q[0]}</span>${q[1]}</p>`}).join('')}</div><div class="meal"><b>餐位预留</b> · ${x[6]}${n==2?'<br><a href="https://xhslink.cn/o/KzzpZLRh9R">小红书：仙沙岛一日游</a><br><a href="https://xhslink.cn/o/6pU6Xl6OTNt">小红书：响沙湾玩法参考</a>':''}</div>${n==2?`<a class="btn" href="https://surl.amap.com/mSZ2zc1lfia" target="_blank" rel="noopener noreferrer">高德 · 全季酒店</a><a class="btn" href="${x[7]}" target="_blank" rel="noopener noreferrer">高德 · 响沙湾</a>`:`<a class="btn" href="${x[7]}" target="_blank" rel="noopener noreferrer">打开高德导航</a>`}</div>`}render();</script></html>
+['07','把从容留给返程','全季酒店 → 白塔机场','呼和浩特 · 4–16°C','市区秋装；机场路上备一件随手穿脱的外套。',['上午|早餐、整理行李，只在酒店附近活动。','12:30|退房、取行李。','14:20 前|抵达机场值机安检，16:20 起飞。'],'酒店附近早餐/简餐','https://uri.amap.com/search?keyword=%E5%91%BC%E5%92%8C%E6%B5%A9%E7%89%B9%E7%99%BD%E5%A1%94%E5%9B%BD%E9%99%85%E6%9C%BA%E5%9C%BA',['全季酒店','白塔机场']]];
+function map(a){let p=a[8].map((x,i)=>[70+i*(460/(a[8].length-1||1)),150+(i%2?40:-38)]),d=p.map((x,i)=>(i?'L':'M')+x).join(' ');return`<div class="card map"><h3>${a[2]}</h3><svg viewBox="0 0 600 300"><rect width="600" height="300" fill="#e4eddf"/><path d="M0 65Q140 10 280 75T600 48M0 230Q140 175 280 235T600 205" fill="none" stroke="#bdd4b8" stroke-width="20" opacity=".7"/><path d="${d}" class="road"/>${p.map((x,i)=>`<circle cx="${x[0]}" cy="${x[1]}" r="12" class="pin"/><text x="${x[0]-4}" y="${x[1]+4}" class="num">${i+1}</text><text x="${x[0]-30}" y="${x[1]-19}" class="lab">${a[8][i]}</text>`).join('')}</svg><div class="legend">1 → ${a[8].length} 为当天行程顺序</div></div>`}
+
+const tabs=document.getElementById('tabs'),app=document.getElementById('app');
+const sections=[['overview','概览'],['prepare','行前准备'],['sights','景点介绍'],['food','美食与伴手礼'],['details','行程细则']];
+let section='overview',dayIndex=0;
+const storageKey='inner-mongolia-trip-state-v1';
+let state={expenses:[],checks:{}};
+try{const saved=JSON.parse(localStorage.getItem(storageKey)||'null');if(saved&&Array.isArray(saved.expenses))state.expenses=saved.expenses;if(saved&&saved.checks&&typeof saved.checks==='object')state.checks=saved.checks}catch{}
+function persist(){try{localStorage.setItem(storageKey,JSON.stringify(state))}catch{}}
+function overview(){return `<div class="ey">全程总览 · 5 天 4 晚</div><h2 class="title">一条从草原到沙漠的秋日路线</h2><div class="card summary"><div class="tile"><b>10/03 · 草原</b>塞北驿站蒙古包</div><div class="tile"><b>10/04–06 · 呼市</b>全季赛罕万达店</div><div class="tile"><b>核心风景</b>辉腾锡勒、黄花沟、响沙湾</div><div class="tile"><b>返程</b>10/07 16:20 白塔机场</div></div><div class="card">${D.map(x=>`<div class="day"><div class="date">10/${x[0]}</div><div><b>${x[1]}</b><br><small>${x[2]}</small></div></div>`).join('')}</div><div class="card"><b>随手记账</b><p class="note">记录只保存在当前设备的浏览器中，不会自动同步给同行人。</p><form class="ledger-form" id="ledger-form"><input name="name" placeholder="项目，如午餐" aria-label="消费项目" required maxlength="40"><input name="amount" type="number" min="0.01" step="0.01" placeholder="金额 ¥" aria-label="金额" required><input name="who" placeholder="付款人（可选）" aria-label="付款人" maxlength="20"><button type="submit">记一笔</button></form><div id="expense-list"></div><div class="total" id="expense-total"></div></div>`}
+function prepare(){return `<div class="ey">出发前</div><h2 class="title">行前准备与实用贴士</h2><div class="card"><b>出行清单</b><p class="note">可勾选，状态保存在当前浏览器。</p><div class="check"><div><b>保暖</b><br>冲锋衣、抓绒、薄羽绒、帽子手套</div><div><b>防晒防沙</b><br>墨镜、防晒、润唇膏、头巾/口罩</div><div><b>鞋服</b><br>防水运动鞋、厚袜、长袖打底</div><div><b>实用物品</b><br>充电宝、保温杯、湿巾、密封袋</div><div><b>证件与预约</b><br>身份证、酒店订单、景区票、保险</div><div><b>药品</b><br>肠胃药、创可贴、个人常用药</div></div></div><div class="card"><b>出发前确认</b><label class="tick"><input type="checkbox" data-check="orders">核对航班、住宿和接送安排</label><label class="tick"><input type="checkbox" data-check="huanghuagou">确认黄花沟 10/04 是否开放及入园方式</label><label class="tick"><input type="checkbox" data-check="xsw">确认响沙湾 10/05 的开放区域和套票项目</label><label class="tick"><input type="checkbox" data-check="weather">临行查看天气，按实况调整衣物</label></div><div class="card"><b>实用贴士</b><p class="tip">草原早晚风大，外层以防风为主；天气数字目前只是季节参考。</p><p class="tip">沙漠当天留出午餐和补水时间，不必为玩全所有项目赶路。</p><p class="tip">若黄花沟临时闭园，在辉腾锡勒附近选择可进入的观景区域，出发前确认道路与开放情况。</p><p class="tip">高德按钮在新标签打开。手机是否直接唤起高德 App，由浏览器和系统决定。</p></div>`}
+function sights(){return `<div class="ey">地点速览</div><h2 class="title">这趟主要看什么</h2><div class="card feature-grid"><div class="feature"><b>辉腾锡勒草原</b><p>首日看草原、风车与日落，第二天早晨可按体力看日出。</p><small>10/03–04 · 自然风景</small></div><div class="feature"><b>黄花沟</b><p>把峡谷与草原放在同一上午。开放和线路需在出发前复核。</p><small>10/04 · 草原主线</small></div><div class="feature"><b>响沙湾 · 仙沙岛</b><p>留一整天给沙漠，项目按体力挑选；票种与价格以购买页为准。</p><small>10/05 · 沙漠主线</small></div><div class="feature"><b>红石崖</b><p>看红色山崖与高山景观，以观景和轻徒步为主。</p><small>10/06 · 山地风景</small></div><div class="feature"><b>敕勒川草原</b><p>旧版 10/06 午后的一站；若红石崖用时较长，可直接回城休息。</p><small>10/06 · 可选，不强赶</small></div></div><p class="note">这一栏介绍路线中的地点。每天的时间、路线图和导航按钮请到「行程细则」查看。</p>`}
+function food(){return `<div class="ey">一路吃一点</div><h2 class="title">美食与伴手礼</h2><div class="card"><b>想尝的当地味道</b><div class="feature-grid"><div class="feature"><b>烧麦</b><p>适合在呼市吃早餐或早午餐；三人先按食量点，不必为排队太久绕路。</p></div><div class="feature"><b>蒙餐与羊肉</b><p>返城后的晚餐可选手把肉、涮羊肉等，结合附近餐馆和同行人口味决定。</p></div><div class="feature"><b>奶茶与乳制品</b><p>路上尝一点奶茶、奶皮子或奶酪，留意甜度和乳制品保存条件。</p></div><div class="feature"><b>羊杂和面食</b><p>想吃一顿更有当地风味的早餐时可试；不适合口味就换轻一点的选择。</p></div></div></div><div class="card"><b>伴手礼</b><p>乳制品和密封的牛羊肉制品可作为选购方向。返程前核对保质期、储存要求和携带限制，不专门为购物改变路线。</p></div><p class="note">这里是风味与选购汇总，尚未核定具体分店、菜单或国庆报价。</p>`}
+function detail(){const x=D[dayIndex];return `<div class="ey">行程细则 · 5 天</div><h2 class="title">每天的具体安排</h2><nav class="subtabs" id="day-tabs" aria-label="选择日期">${D.map((d,i)=>`<button type="button" class="${i===dayIndex?'on':''}" data-day="${i}" aria-pressed="${i===dayIndex}">10/${d[0]}</button>`).join('')}</nav><div class="ey">DAY ${dayIndex+1} · 10/${x[0]}</div><h2 class="title">${x[1]}</h2>${map(x)}<div class="card weather"><b>☀︎ ${x[3]}</b><small>秋季参考温度，非实时预报</small><div class="wear"><b>穿衣建议：</b>${x[4]}</div></div><div class="card"><div class="line">${x[5].map(z=>{const q=z.split('|');return `<p><span class="time">${q[0]}</span>${q[1]}</p>`}).join('')}</div><div class="meal"><b>餐位预留</b> · ${x[6]}${dayIndex===2?'<br><a href="https://xhslink.cn/o/KzzpZLRh9R" target="_blank" rel="noopener noreferrer">小红书：仙沙岛一日游</a><br><a href="https://xhslink.cn/o/6pU6Xl6OTNt" target="_blank" rel="noopener noreferrer">小红书：响沙湾玩法参考</a>':''}</div>${dayIndex===2?`<a class="btn" href="https://surl.amap.com/mSZ2zc1lfia" target="_blank" rel="noopener noreferrer">高德 · 全季酒店</a><a class="btn" href="${x[7]}" target="_blank" rel="noopener noreferrer">高德 · 响沙湾</a>`:`<a class="btn" href="${x[7]}" target="_blank" rel="noopener noreferrer">打开高德导航</a>`}</div>`}
+function drawLedger(){const list=document.getElementById('expense-list'),total=document.getElementById('expense-total');if(!list||!total)return;list.replaceChildren();let sum=0;state.expenses.forEach((e,i)=>{const amount=Number(e.amount);if(!Number.isFinite(amount))return;sum+=amount;const row=document.createElement('div');row.className='expense';const label=document.createElement('span'),price=document.createElement('b'),del=document.createElement('button'),who=document.createElement('small');label.textContent=String(e.name||'消费');who.textContent=String(e.who||'未填付款人');label.append(who);price.textContent=`¥${amount.toFixed(2)}`;del.type='button';del.textContent='删除';del.addEventListener('click',()=>{state.expenses.splice(i,1);persist();drawLedger()});row.append(label,price,del);list.append(row)});total.textContent=`已记录：¥${sum.toFixed(2)}`}
+function render(){tabs.innerHTML=sections.map(([key,label])=>`<button type="button" class="${key===section?'on':''}" data-section="${key}" aria-pressed="${key===section}">${label}</button>`).join('');app.innerHTML=({overview,prepare,sights,food,details:detail})[section]();if(section==='overview'){drawLedger();document.getElementById('ledger-form').addEventListener('submit',e=>{e.preventDefault();const form=e.currentTarget,name=form.elements.namedItem('name').value.trim(),amount=Number(form.elements.namedItem('amount').value),who=form.elements.namedItem('who').value.trim();if(!name||!Number.isFinite(amount)||amount<=0)return;state.expenses.push({name,amount,who});persist();form.reset();drawLedger()})}if(section==='prepare')document.querySelectorAll('[data-check]').forEach(input=>{input.checked=!!state.checks[input.dataset.check];input.addEventListener('change',()=>{state.checks[input.dataset.check]=input.checked;persist()})})}
+tabs.addEventListener('click',e=>{const btn=e.target.closest('[data-section]');if(!btn)return;section=btn.dataset.section;render()});
+app.addEventListener('click',e=>{const btn=e.target.closest('[data-day]');if(!btn)return;dayIndex=Number(btn.dataset.day);render()});
+render();
+</script>
+</body>
+</html>
