@@ -606,6 +606,7 @@
             ["fleece", "抓绒"],
             ["down", "薄羽绒"],
             ["gloves", "帽子手套"],
+            ["warm-scarf", "保暖围巾/脖套"],
           ],
         ],
         [
@@ -614,6 +615,8 @@
             ["sunglasses", "墨镜"],
             ["sunblock", "防晒"],
             ["lip", "润唇膏"],
+            ["hand-cream", "护手霜"],
+            ["face-cream", "保湿面霜"],
             ["scarf", "头巾/口罩"],
           ],
         ],
@@ -623,6 +626,7 @@
             ["shoes", "防水运动鞋"],
             ["socks", "厚袜"],
             ["base", "长袖打底"],
+            ["slippers", "便携拖鞋（蒙古包换穿）"],
           ],
         ],
         [
@@ -630,7 +634,10 @@
           [
             ["charger", "充电宝"],
             ["bottle", "保温杯"],
-            ["wipes", "湿巾"],
+            ["wipes", "湿厕纸/湿巾"],
+            ["tissues", "干纸巾"],
+            ["repellent", "驱蚊液（草原傍晚）"],
+            ["cash", "少量现金"],
             ["bags", "密封袋"],
           ],
         ],
@@ -670,7 +677,7 @@
         return `<div class="ey">全程总览 · 5 天 4 晚</div><h2 class="title">一条从草原到沙漠的秋日路线</h2><div class="card summary"><div class="tile"><b>10/03 · 草原</b>塞北驿站蒙古包</div><div class="tile"><b>10/04–06 · 呼市</b>全季赛罕万达店</div><div class="tile"><b>核心风景</b>辉腾锡勒、黄花沟、响沙湾</div><div class="tile"><b>返程</b>10/07 16:20 白塔机场</div></div><div class="card">${D.map((x) => `<div class="day"><div class="date">10/${x[0]}</div><div><b>${x[1]}</b><br><small>${x[2]}</small></div></div>`).join("")}</div><div class="card"><b>共享记账</b><p class="note">大家在腾讯文档里查看和填写同一本账，按文档分享权限访问。</p><a class="btn" href="https://docs.qq.com/sheet/DQ3ZHRFJzaVpWTGVB" target="_blank" rel="noopener noreferrer">打开腾讯文档记账表 ↗</a></div>`;
       }
       function prepare() {
-        return `<div class="ey">出发前</div><h2 class="title">行前准备与实用贴士</h2><div class="card"><b>出行清单</b><p class="note" id="pack-count">每件物品都可单独勾选，状态保存在当前浏览器。</p><div class="check">${PACKING_GROUPS.map(([title, items]) => `<div class="pack-group"><b>${title}</b>${items.map(([key, label]) => `<label class="tick"><input type="checkbox" data-check="pack-${key}">${label}</label>`).join("")}</div>`).join("")}</div></div><div class="card"><b>出发前确认</b><label class="tick"><input type="checkbox" data-check="orders">核对航班、住宿和接送安排</label><label class="tick"><input type="checkbox" data-check="huanghuagou">确认黄花沟 10/04 是否开放及入园方式</label><label class="tick"><input type="checkbox" data-check="xsw">确认响沙湾 10/05 的开放区域和套票项目</label><label class="tick"><input type="checkbox" data-check="weather">临行查看天气，按实况调整衣物</label></div><div class="card"><b>实用贴士</b><p class="tip">草原早晚风大，外层以防风为主；天气数字目前只是季节参考。</p><p class="tip">沙漠当天留出午餐和补水时间，不必为玩全所有项目赶路。</p><p class="tip">若黄花沟临时闭园，在辉腾锡勒附近选择可进入的观景区域，出发前确认道路与开放情况。</p><p class="tip">高德按钮在新标签打开。手机是否直接唤起高德 App，由浏览器和系统决定。</p></div>`;
+        return `<div class="ey">出发前</div><h2 class="title">行前准备与实用贴士</h2><div class="card"><b>出行清单</b><p class="note" id="pack-count">每件物品都可单独勾选，状态保存在当前浏览器。</p><div class="check">${PACKING_GROUPS.map(([title, items]) => `<div class="pack-group"><b>${title}</b>${items.map(([key, label]) => `<label class="tick"><input type="checkbox" data-check="pack-${key}">${label}</label>`).join("")}</div>`).join("")}</div><p class="note">补充参考：<a href="https://xhslink.cn/o/4GZRujthlKK" target="_blank" rel="noopener noreferrer">内蒙古秋游必带物品笔记 ↗</a></p></div><div class="card"><b>出发前确认</b><label class="tick"><input type="checkbox" data-check="orders">核对航班、住宿和接送安排</label><label class="tick"><input type="checkbox" data-check="huanghuagou">确认黄花沟 10/04 是否开放及入园方式</label><label class="tick"><input type="checkbox" data-check="xsw">确认响沙湾 10/05 的开放区域和套票项目</label><label class="tick"><input type="checkbox" data-check="weather">临行查看天气，按实况调整衣物</label></div><div class="card"><b>实用贴士</b><p class="tip">草原早晚风大，外层以防风为主；天气数字目前只是季节参考。</p><p class="tip">沙漠当天留出午餐和补水时间，不必为玩全所有项目赶路。</p><p class="tip">若黄花沟临时闭园，在辉腾锡勒附近选择可进入的观景区域，出发前确认道路与开放情况。</p><p class="tip">高德按钮在新标签打开。手机是否直接唤起高德 App，由浏览器和系统决定。</p></div>`;
       }
       function updatePackCount() {
         const inputs = [...document.querySelectorAll('[data-check^="pack-"]')];
