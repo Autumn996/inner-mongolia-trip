@@ -391,7 +391,7 @@
       <nav class="tabs" id="tabs" aria-label="主栏目"></nav>
       <section id="app" aria-live="polite"></section>
       <p class="note">
-        天气为秋季参考，不是实时预报；景区开放、票价与项目以出发前官方信息为准。路线图仅示意顺序，实际导航以高德为准。
+        天气依据 2026-09-30 查询的中国天气网预报，非自动更新；景区开放、票价与项目以出发前官方信息为准。路线图仅示意顺序，实际导航以高德为准。
       </p>
     </main>
     <script>
@@ -400,8 +400,8 @@
           "03",
           "落地，奔向草原的夜",
           "白塔机场 → 塞北驿站 → 牛粑粑欢乐草原",
-          "辉腾锡勒 · -2–10°C",
-          "保暖内层 + 抓绒/薄羽绒 + 防风冲锋衣；日出和篝火带帽子手套。",
+          "辉腾锡勒（参考察右中旗）· 小雨转多云 · -4～7°C · 风 5–6 级转 4–5 级",
+          "保暖内层 + 羽绒服 + 防风防雨外层；带帽子、手套和防水鞋。风雨较大时缩短草原停留，篝火以营地安排为准。",
           [
             "10:55–12:00|落地、取行李、与司机会合。",
             "12:00–14:30|直达辉腾锡勒，入住塞北驿站。",
@@ -422,8 +422,8 @@
           "04",
           "草原日出，傍晚逛呼市老城",
           "塞北驿站 → 飞驰马术场 → 黄花沟 → 大召寺 → 塞上老街",
-          "辉腾锡勒 → 呼市 · -1–12°C",
-          "早晨按 0°C 准备；白天长袖 + 防风外套，傍晚进市区加一层保暖。",
+          "草原（参考察右中旗）· 晴 · -3～7°C · 风 3–4 级<br>呼市城区 · 晴 · 3～16°C · 风 3–4 级",
+          "草原清晨穿保暖内层、羽绒服和防风外层，配帽子手套；进呼市后按体感脱去一层，夜游保留外套。",
           [
             "06:30–07:30|草原日出、早餐、退房。",
             "09:00–10:30|黄花沟飞驰马术场：骑马走外围草场；不骑马可直接去黄花沟南门外围。",
@@ -452,8 +452,8 @@
           "05",
           "响沙湾：仙沙岛主线",
           "全季酒店 ↔ 响沙湾（仅仙沙岛）",
-          "响沙湾 · 4–18°C",
-          "长袖打底 + 防风外套；墨镜、口罩/头巾和防沙鞋套。",
+          "响沙湾（参考达拉特旗）· 晴 · 3～17°C · 风小于 3 级",
+          "长袖打底 + 抓绒/保暖外套，清晨出发和返程备薄羽绒；白天按体感增减。带墨镜、头巾、防沙鞋套并做好防晒。",
           [
             "06:30–07:00|酒店出发。",
             "10:30–12:30|进景区后直奔仙沙岛；参考岛票 ¥180，以当天预订页为准。",
@@ -476,8 +476,8 @@
           "06",
           "红色山崖，接着去敕勒川",
           "全季酒店 → 红石崖 → 敕勒川草原",
-          "呼市周边 · 3–16°C",
-          "长袖 + 冲锋衣；红石崖风口加抓绒或薄羽绒。",
+          "红石崖（参考卓资县）· 晴 · 0～16°C · 风 3–4 级<br>敕勒川（参考呼市城区）· 晴 · 4～20°C · 风小于 3 级",
+          "长袖 + 抓绒/薄羽绒 + 防风外层；红石崖早晨与风口保暖，下午到敕勒川按体感减衣。",
           [
             "08:30–13:30|红石崖丹霞、草原观景与轻徒步。",
             "14:30–17:30|敕勒川草原，日落前结束。",
@@ -497,8 +497,8 @@
           "07",
           "博物院半日，安心返程",
           "全季酒店 → 内蒙古博物院 → 白塔机场",
-          "呼和浩特 · 4–16°C",
-          "市区秋装；机场路上备一件随手穿脱的外套。",
+          "呼和浩特 · 多云转阴 · 7～19°C · 西南风转东南风，小于 3 级",
+          "长袖 + 薄外套，早晨偏凉可加一层；博物院室内和机场便于穿脱。带折叠雨具，并在返程前复查预报。",
           [
             "08:30|退房，行李寄存酒店。",
             "09:00–11:15|内蒙古博物院：优先看蒙元文化、草原历史和自然展；提前预约。",
@@ -517,10 +517,10 @@
         ],
       ];
       const WEATHER_LINKS = [
-        ["察右中旗", "https://www.weather.com.cn/weather15d/101080409.shtml"],
-        ["察右中旗", "https://www.weather.com.cn/weather15d/101080409.shtml"],
-        ["达拉特旗", "https://www.weather.com.cn/weather15d/101080703.shtml"],
-        ["呼和浩特", "https://www.weather.com.cn/weather15d/101080101.shtml"],
+        ["察右中旗", "https://www.weather.com.cn/weather/101080409.shtml"],
+        ["察右中旗", "https://www.weather.com.cn/weather/101080409.shtml"],
+        ["达拉特旗", "https://www.weather.com.cn/weather/101080703.shtml"],
+        ["卓资（红石崖参考）", "https://www.weather.com.cn/weather/101080402.shtml"],
         ["呼和浩特", "https://www.weather.com.cn/weather15d/101080101.shtml"],
       ];
       const XHS_REFERENCES = [
@@ -681,7 +681,7 @@
         return `<div class="ey">全程总览 · 5 天 4 晚</div><h2 class="title">一条从草原到沙漠的秋日路线</h2><div class="card summary"><div class="tile"><b>10/03 · 草原</b>塞北驿站蒙古包</div><div class="tile"><b>10/04–06 · 呼市</b>全季赛罕万达店</div><div class="tile"><b>核心风景</b>辉腾锡勒、黄花沟、响沙湾</div><div class="tile"><b>返程</b>10/07 16:20 白塔机场</div></div><div class="card">${D.map((x) => `<div class="day"><div class="date">10/${x[0]}</div><div><b>${x[1]}</b><br><small>${x[2]}</small></div></div>`).join("")}</div><div class="card"><b>共享记账</b><p class="note">大家在腾讯文档里查看和填写同一本账，按文档分享权限访问。</p><a class="btn" href="https://docs.qq.com/sheet/DQ3ZHRFJzaVpWTGVB" target="_blank" rel="noopener noreferrer">打开腾讯文档记账表 ↗</a></div>`;
       }
       function prepare() {
-        return `<div class="ey">出发前</div><h2 class="title">行前准备与实用贴士</h2><div class="card"><b>出行清单</b><p class="note" id="pack-count">每件物品都可单独勾选，状态保存在当前浏览器。</p><div class="check">${PACKING_GROUPS.map(([title, items]) => `<div class="pack-group"><b>${title}</b>${items.map(([key, label]) => `<label class="tick"><input type="checkbox" data-check="pack-${key}">${label}</label>`).join("")}</div>`).join("")}</div><p class="note">补充参考：<a href="https://xhslink.cn/o/4GZRujthlKK" target="_blank" rel="noopener noreferrer">内蒙古秋游必带物品笔记 ↗</a></p></div><div class="card"><b>出发前确认</b><label class="tick"><input type="checkbox" data-check="orders">核对航班、住宿和接送安排</label><label class="tick"><input type="checkbox" data-check="huanghuagou">确认黄花沟 10/04 是否开放及入园方式</label><label class="tick"><input type="checkbox" data-check="xsw">确认响沙湾 10/05 的开放区域和套票项目</label><label class="tick"><input type="checkbox" data-check="weather">临行查看天气，按实况调整衣物</label></div><div class="card"><b>实用贴士</b><p class="tip">草原早晚风大，外层以防风为主；天气数字目前只是季节参考。</p><p class="tip">沙漠当天留出午餐和补水时间，不必为玩全所有项目赶路。</p><p class="tip">若黄花沟临时闭园，在辉腾锡勒附近选择可进入的观景区域，出发前确认道路与开放情况。</p><p class="tip">高德按钮在新标签打开。手机是否直接唤起高德 App，由浏览器和系统决定。</p></div>`;
+        return `<div class="ey">出发前</div><h2 class="title">行前准备与实用贴士</h2><div class="card"><b>出行清单</b><p class="note" id="pack-count">每件物品都可单独勾选，状态保存在当前浏览器。</p><div class="check">${PACKING_GROUPS.map(([title, items]) => `<div class="pack-group"><b>${title}</b>${items.map(([key, label]) => `<label class="tick"><input type="checkbox" data-check="pack-${key}">${label}</label>`).join("")}</div>`).join("")}</div><p class="note">补充参考：<a href="https://xhslink.cn/o/4GZRujthlKK" target="_blank" rel="noopener noreferrer">内蒙古秋游必带物品笔记 ↗</a></p></div><div class="card"><b>出发前确认</b><label class="tick"><input type="checkbox" data-check="orders">核对航班、住宿和接送安排</label><label class="tick"><input type="checkbox" data-check="huanghuagou">确认黄花沟 10/04 是否开放及入园方式</label><label class="tick"><input type="checkbox" data-check="xsw">确认响沙湾 10/05 的开放区域和套票项目</label><label class="tick"><input type="checkbox" data-check="weather">临行查看天气，按实况调整衣物</label></div><div class="card"><b>实用贴士</b><p class="tip">草原早晚寒冷，外层以防风防雨为主；每日天气已按 2026-09-30 查询的预报更新，出发前再核对。</p><p class="tip">沙漠当天留出午餐和补水时间，不必为玩全所有项目赶路。</p><p class="tip">若黄花沟临时闭园，在辉腾锡勒附近选择可进入的观景区域，出发前确认道路与开放情况。</p><p class="tip">高德按钮在新标签打开。手机是否直接唤起高德 App，由浏览器和系统决定。</p></div>`;
       }
       function updatePackCount() {
         const inputs = [...document.querySelectorAll('[data-check^="pack-"]')];
@@ -875,7 +875,7 @@
         const routeVisual = dayIndex === 0
           ? `<figure class="card itinerary-poster"><a href="day-03-itinerary.png" target="_blank" rel="noopener noreferrer" aria-label="查看 10 月 3 日手绘行程大图"><img src="day-03-itinerary.png" alt="10 月 3 日手绘行程图：白塔机场、辉腾锡勒草原、塞北驿站、牛粑粑欢乐草原、日落与篝火" width="1024" height="1536" decoding="async"></a><figcaption>点按图片查看大图；具体时间与地点导航见下方。</figcaption></figure>`
           : map(x);
-        return `<div class="ey">每日行程 · 5 天</div><h2 class="title">每天的具体安排</h2><nav class="subtabs" id="day-tabs" aria-label="选择日期">${D.map((d, i) => `<button type="button" class="${i === dayIndex ? "on" : ""}" data-day="${i}" aria-pressed="${i === dayIndex}">10/${d[0]}</button>`).join("")}</nav><div class="ey">DAY ${dayIndex + 1} · 10/${x[0]}</div><h2 class="title">${x[1]}</h2>${routeVisual}<div class="card weather"><b>☀︎ ${x[3]}</b><small>秋季参考温度，非实时预报</small><a class="btn weather-link" href="${WEATHER_LINKS[dayIndex][1]}" target="_blank" rel="noopener noreferrer">中国天气网 · ${WEATHER_LINKS[dayIndex][0]}详细天气 ↗</a><div class="wear"><b>穿衣建议：</b>${x[4]}</div></div><div class="card"><div class="line">${x[5]
+        return `<div class="ey">每日行程 · 5 天</div><h2 class="title">每天的具体安排</h2><nav class="subtabs" id="day-tabs" aria-label="选择日期">${D.map((d, i) => `<button type="button" class="${i === dayIndex ? "on" : ""}" data-day="${i}" aria-pressed="${i === dayIndex}">10/${d[0]}</button>`).join("")}</nav><div class="ey">DAY ${dayIndex + 1} · 10/${x[0]}</div><h2 class="title">${x[1]}</h2>${routeVisual}<div class="card weather"><b>${x[3]}</b><small>中国天气网 · 查询日期 2026-09-30 · ${dayIndex === 4 ? "8–15 天趋势预报，不确定性较高" : "未来 7 天预报"}；本页非自动更新。温度为全天最低～最高，县市预报供景区参考。</small><a class="btn weather-link" href="${WEATHER_LINKS[dayIndex][1]}" target="_blank" rel="noopener noreferrer">中国天气网 · ${WEATHER_LINKS[dayIndex][0]}详细天气 ↗</a>${dayIndex === 1 || dayIndex === 3 ? '<a class="btn weather-link" href="https://www.weather.com.cn/weather/101080101.shtml" target="_blank" rel="noopener noreferrer">中国天气网 · 呼和浩特详细天气 ↗</a>' : ""}<div class="wear"><b>穿衣建议：</b>${x[4]}</div></div><div class="card"><div class="line">${x[5]
           .map((z) => {
             const q = z.split("|");
             return `<p><span class="time">${q[0]}</span>${q[1]}</p>`;
