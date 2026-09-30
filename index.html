@@ -819,13 +819,15 @@
         const place = FOOD_PLACE_LINKS[name];
         if (!place) return "";
         const point = FOOD_COORDINATES[name];
-        // Only genuine Amap share URLs should be added here; never substitute
-        // keyword search or route-planning links for a single place.
         const share = place.share || null;
+        // Use the stable web entry. Amap handles the mobile App handoff.
+        // Keep per-visit landing-page identifiers out of these saved URLs.
+        const keyword = place.keyword.split(" ")[0];
         const href = share || (point
           ? `https://uri.amap.com/marker?position=${point.join(",")}&name=${encodeURIComponent(place.keyword)}&coordinate=gaode&callnative=1&src=inner_mongolia_trip`
-          : null);
-        return `<div class="food-links">${href ? `<a class="btn" href="${href}" target="_blank" rel="noopener noreferrer" aria-label="${name}：高德地点">${share ? "高德 · 门店详情" : "高德 · 单点位置"} ↗</a>` : '<small class="note">高德门店分享链接待补充</small>'}${place.dianping ? `<a class="btn review-link" href="${place.dianping}" target="_blank" rel="noopener noreferrer" aria-label="${name}：大众点评">大众点评 ↗</a>` : ""}</div>`;
+          : `https://uri.amap.com/search?keyword=${encodeURIComponent(keyword)}&city=150100&view=list&callnative=1&src=inner_mongolia_trip`);
+        const label = share ? "高德 · 门店详情" : point ? "高德 · 单点位置" : "高德 · 找店";
+        return `<div class="food-links"><a class="btn" href="${href}" target="_blank" rel="noopener noreferrer" aria-label="${name}：${label}">${label} ↗</a>${place.dianping ? `<a class="btn review-link" href="${place.dianping}" target="_blank" rel="noopener noreferrer" aria-label="${name}：大众点评">大众点评 ↗</a>` : ""}</div>`;
       }
       function food() {
         return `
@@ -866,7 +868,7 @@
           </div>
           <div class="card food-category"><h3>伴手礼</h3><p>乳制品和密封的牛羊肉制品可作为选购方向。返程前核对保质期、储存要求和携带限制，不专门为购物改变路线。</p></div>
           <div class="card"><b>小红书参考</b><p>店铺和口味评价来自两篇个人分享；新笔记中有一家卓资路边店未记店名，暂未列入。</p><a href="https://xhslink.cn/o/1pX8Q0qcSOE" target="_blank" rel="noopener noreferrer">本地人最爱的呼和浩特蒙餐馆 ↗</a><br><a href="https://xhslink.cn/o/6a33e5RsklZ" target="_blank" rel="noopener noreferrer">没想到呼和浩特这么好吃 ↗</a></div>
-          <p class="note">老贝尔已提供高德门店详情分享链接；德乐海、格日勒阿妈市政府西门店目前提供单点位置标注。其余店铺待取得对应门店的高德分享链接后再开放按钮。菜单、营业时间和国庆价格以店铺最新信息为准。</p>`;
+          <p class="note">高德按钮在新标签页打开，沿用网页入口，由高德处理跳转 App。老贝尔打开门店分享页；德乐海、格日勒阿妈市政府西门店打开单点位置；其余店铺打开找店结果，请按上方分店说明选择。菜单、营业时间和国庆价格以店铺最新信息为准。</p>`;
       }
       function detail() {
         const x = D[dayIndex];
